@@ -1,10 +1,9 @@
 :root {
     /* Simple Modern Romantic Palette */
     --primary-color: #e63946;
-    /* Vibrant Red */
     --secondary-color: #f1faee;
     --accent-color: #457b9d;
-    --card-bg: white;
+    --card-bg: rgba(255, 255, 255, 0.95);
     --text-color: #1d3557;
 
     --font-heading: 'Outfit', sans-serif;
@@ -25,13 +24,31 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, #FF9A9E 0%, #FECFEF 100%);
+    /* Soft Moving Gradient */
+    background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1);
+    background-size: 400% 400%;
+    animation: gradientMove 15s ease infinite;
     font-family: var(--font-body);
     overflow: hidden;
     position: relative;
     color: var(--text-color);
 }
 
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Floating Elements (Hearts/Stars) */
 .floating-hearts {
     position: absolute;
     width: 100%;
@@ -44,26 +61,32 @@ body {
 .floating-hearts span {
     position: absolute;
     bottom: -100px;
-    font-size: 1.5rem;
-    color: rgba(255, 255, 255, 0.6);
-    animation: floatUp 15s linear infinite;
-    animation-duration: calc(15s / var(--i));
+    font-size: calc(20px + 1vw);
+    color: rgba(255, 255, 255, 0.4);
+    animation: floatUp 12s linear infinite;
+    animation-duration: calc(12s / var(--i));
     left: calc(10% * var(--i));
-    opacity: 0.7;
+    opacity: 0;
+    filter: blur(1px);
 }
 
 @keyframes floatUp {
     0% {
-        transform: translateY(0) rotate(0deg);
+        transform: translateY(0) rotate(0deg) scale(0.5);
+        opacity: 0;
+    }
+
+    20% {
         opacity: 0.6;
     }
 
     50% {
         opacity: 0.8;
+        transform: translateY(-50vh) rotate(180deg) scale(1.1);
     }
 
     100% {
-        transform: translateY(-120vh) rotate(360deg);
+        transform: translateY(-120vh) rotate(360deg) scale(1.2);
         opacity: 0;
     }
 }
@@ -75,91 +98,143 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
+    perspective: 1000px;
 }
 
 .card {
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background: var(--card-bg);
+    backdrop-filter: blur(20px);
+    border-radius: 24px;
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.1),
+        0 0 0 1px rgba(255, 255, 255, 0.5) inset;
     padding: 2.5rem 2rem;
     text-align: center;
     width: 380px;
-    /* Comfortable width */
     max-width: 90vw;
-    min-height: 400px;
+    min-height: 420px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transition: all 0.5s ease;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
 }
 
+/* Entrance Animations */
+.slide-in-up {
+    animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideUpFade {
+    0% {
+        opacity: 0;
+        transform: translateY(40px) scale(0.95);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Icons */
 .heart-icon {
-    margin-bottom: 1rem;
-    height: 60px;
+    margin-bottom: 0.5rem;
+    height: 70px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .emoji-icon {
-    font-size: 3rem;
-    animation: gentleBounce 2s infinite ease-in-out;
+    font-size: 3.5rem;
+    animation: gentleFloater 3s ease-in-out infinite;
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.1));
 }
 
-@keyframes gentleBounce {
+@keyframes gentleFloater {
 
     0%,
     100% {
-        transform: translateY(0);
+        transform: translateY(0) rotate(0deg);
     }
 
     50% {
-        transform: translateY(-8px);
+        transform: translateY(-10px) rotate(5deg);
     }
 }
 
 .heart-svg {
-    width: 60px;
-    height: 60px;
-    filter: drop-shadow(0 4px 6px rgba(230, 57, 70, 0.4));
-    animation: heartbeat 1.5s ease-in-out infinite;
+    width: 70px;
+    height: 70px;
+    filter: drop-shadow(0 4px 8px rgba(230, 57, 70, 0.3));
+    animation: warmBeat 2s ease-in-out infinite;
 }
 
-/* Typography Updates */
+@keyframes warmBeat {
+    0% {
+        transform: scale(1);
+        filter: drop-shadow(0 4px 8px rgba(230, 57, 70, 0.3));
+    }
+
+    50% {
+        transform: scale(1.1);
+        filter: drop-shadow(0 8px 16px rgba(230, 57, 70, 0.5));
+    }
+
+    100% {
+        transform: scale(1);
+        filter: drop-shadow(0 4px 8px rgba(230, 57, 70, 0.3));
+    }
+}
+
+/* Typography */
 h1 {
     font-family: var(--font-heading);
     color: #e63946;
-    font-size: 2rem;
+    font-size: 2.2rem;
     margin-bottom: 0.5rem;
-    font-weight: 600;
+    font-weight: 700;
+    letter-spacing: -0.5px;
 }
 
 p.question-text {
     font-size: 1.1rem;
     color: #457b9d;
     margin-bottom: 1.5rem;
+    line-height: 1.5;
 }
 
-/* Shayari Box */
+/* Shayari Box - Elegant Design */
 .shayari {
-    background: #fff0f3;
-    padding: 1rem;
+    background: linear-gradient(135deg, #fff0f3, #fff);
+    padding: 1.2rem;
     margin-bottom: 1.5rem;
-    border-radius: 10px;
+    border-radius: 12px;
     border-left: 4px solid #e63946;
     width: 100%;
     margin-top: 0.5rem;
+    box-shadow: 0 4px 12px rgba(230, 57, 70, 0.05);
+    position: relative;
+}
+
+.shayari::before {
+    content: "❝";
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    font-size: 2rem;
+    color: #e63946;
+    opacity: 0.2;
 }
 
 .shayari p {
     font-family: var(--font-shayari);
     font-style: italic;
     color: #1d3557;
-    font-size: 0.95rem;
+    font-size: 1rem;
     line-height: 1.6;
     margin-bottom: 0;
 }
@@ -174,44 +249,59 @@ p.question-text {
 }
 
 .btn {
-    padding: 12px 20px;
-    font-size: 1rem;
+    padding: 14px 20px;
+    font-size: 1.05rem;
     border: none;
-    border-radius: 30px;
+    border-radius: 50px;
     cursor: pointer;
     font-family: var(--font-body);
-    font-weight: 500;
-    transition: all 0.2s ease;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     width: 100%;
-    background: white;
-    color: #457b9d;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    border: 1px solid #e1e1e1;
+    position: relative;
+    overflow: hidden;
 }
 
-.btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
+/* Shimmer Effect on Primary Buttons */
 .btn-primary {
-    background: #e63946;
+    background: linear-gradient(135deg, #e63946, #d62828);
     color: white;
-    border: none;
+    box-shadow: 0 4px 15px rgba(230, 57, 70, 0.3);
+}
+
+.btn-primary::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transform: skewX(-25deg);
+    transition: 0.5s;
+}
+
+.btn-primary:hover::after {
+    left: 150%;
+    transition: 1s ease-in-out;
 }
 
 .btn-primary:hover {
-    background: #d62828;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(230, 57, 70, 0.4);
 }
 
 .btn-secondary {
     background: white;
     color: #1d3557;
-    border: 1px solid #a8dadc;
+    border: 2px solid #a8dadc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .btn-secondary:hover {
     background: #f1faee;
+    border-color: #1d3557;
+    transform: translateY(-2px);
 }
 
 /* Proposal Step Buttons */
@@ -222,64 +312,40 @@ p.question-text {
 
 .buttons-row .btn {
     width: auto;
-    min-width: 100px;
+    min-width: 110px;
 }
 
+/* Soft Pink Runaway Button */
 .btn-runaway {
-    background: #f1faee;
-    color: #1d3557;
+    background: #fff0f3;
+    /* Light pink background */
+    color: #e63946;
+    border: 2px solid #ffccd5;
+    /* Soft border */
+    font-weight: 600;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(255, 182, 193, 0.3);
+
+    /* Make it smaller */
+    padding: 8px 15px !important;
+    font-size: 0.85rem !important;
+    min-width: auto !important;
 }
 
-/* Transitions */
-.fade-in {
-    animation: fadeIn 0.5s ease-out forwards;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes heartbeat {
-    0% {
-        transform: scale(1);
-    }
-
-    15% {
-        transform: scale(1.15);
-    }
-
-    30% {
-        transform: scale(1);
-    }
-
-    45% {
-        transform: scale(1.15);
-    }
-
-    60% {
-        transform: scale(1);
-    }
-
-    100% {
-        transform: scale(1);
-    }
-}
-
-.hidden {
-    display: none !important;
+.btn-runaway:hover {
+    background: #ffe6eb;
+    color: #d62828;
+    box-shadow: 0 6px 15px rgba(230, 57, 70, 0.2);
+    cursor: not-allowed;
 }
 
 /* Success Message */
 .success-container h2 {
     color: #e63946;
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     font-weight: 700;
+}
+
+.hidden {
+    display: none !important;
 }

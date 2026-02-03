@@ -2,98 +2,88 @@
 const steps = [
     {
         id: 'start',
-        text: "I have a confession to make...",
-        shayeri: "Tumhari muskurahat par shak hota hai mujhe,<br>Itni khoobsurat cheez itni aasaani se kaise mil gayi mujhe?",
-        icon: '😳',
+        text: "I have a serious confession...",
+        shayeri: "Kuch baatein chupaayi nahi jaati,<br>Aur ab mujhse yeh baat dabaayi nahi jaati.",
+        icon: '🤐',
         options: [
-            { text: "I'm listening... 👂", next: 1 },
-            { text: "Tell me! 🙈", next: 1 }
+            { text: "What happened? 😨", next: 1 },
+            { text: "Tell me now! 😠", next: 1 }
         ]
     },
     {
         id: 1,
-        text: "It started with just a name.",
-        shayeri: "Naam toh sirf poocha tha tumse,<br>Dil ne usey bhi apna ghar bana liya.",
-        icon: '🏠',
+        text: "I think I'm falling for someone...",
+        shayeri: "Dil par ab mera zor nahi chalta,<br>Koi hai jo ise apne hisaab se chalata hai.",
+        icon: '💘',
         options: [
-            { text: "And now? ✨", next: 2 },
-            { text: "Did it steal your heart? 💘", next: 2 }
+            { text: "Who is she? 🤨", next: 2 },
+            { text: "Oh really? 😒", next: 2 }
         ]
     },
     {
         id: 2,
-        text: "Even your silence speaks to me.",
-        shayeri: "Tum baat karti ho toh lagta hai,<br>Khamoshi bhi tumse ijazat lekar bolti hai.",
-        icon: '🤫',
+        text: "She is extremely beautiful... prettier than you! 🫣",
+        shayeri: "Uski aankhon mein ek alag sa jaadu hai,<br>Jo mujhe har waqt deewana banata hai.",
+        icon: '😍',
         options: [
-            { text: "I love talking to you 🗣️", next: 3 },
-            { text: "Silence is beautiful �", next: 3 }
+            { text: "Excuse me?! 😤", next: 3 },
+            { text: "Whatever. 🙄", next: 3 }
         ]
     },
     {
         id: 3,
-        text: "🌸 Growing Closer...",
-        shayeri: "Tum saamne hoti ho toh waqt ruk jaata hai,<br>Aur jab door hoti ho, toh waqt hi nahi chalta.",
-        icon: '⏳',
+        text: "And she is a bit annoying too... 🤏",
+        shayeri: "Thodi ziddi hai, thodi nadaan hai,<br>Par sach kahoon toh wahi meri jaan hai.",
+        icon: '🤪',
         options: [
-            { text: "Time stops for me too ⏳", next: 4 },
-            { text: "I hate being apart 💔", next: 4 }
+            { text: "Okay, stop it! ✋", next: 4 },
+            { text: "Who is this girl?! 😡", next: 4 }
         ]
     },
     {
         id: 4,
-        text: "You changed my world.",
-        shayeri: "Maine ishq ko kitab mein padha tha,<br>Phir tum mile… aur syllabus badal gaya.",
-        icon: '📚',
+        text: "Do you want to see her?",
+        shayeri: "Woh abhi yahan mere saath maujood hai,<br>Aur iss waqt yeh message padh rahi hai.",
+        icon: '🫣',
         options: [
-            { text: "Am I a difficult subject? 🤓", next: 5 },
-            { text: "Best chapter ever? �", next: 5 }
+            { text: "Wait... what? 😳", next: 5 },
+            { text: "Is it me? 🙈", next: 5 }
         ]
     },
     {
         id: 5,
-        text: "You became my habit.",
-        shayeri: "Tumhari aadat si ho gayi ho,<br>Jaise subah ki chai—kam ho toh din adhoora lagta hai.",
-        icon: '☕',
+        text: "Yes, it's YOU! My Dumbo! ❤️",
+        shayeri: "Duniya mein laakhon chehre honge,<br>Par mere dil ko sirf tumhara chehra pasand hai.",
+        icon: '🫵',
         options: [
-            { text: "Like your morning coffee? ☕", next: 6 },
-            { text: "I need you too ☀️", next: 6 }
+            { text: "I knew it! 😂", next: 6 },
+            { text: "You scared me! 👊", next: 6 }
         ]
     },
     {
         id: 6,
-        text: "💖 Almost There...",
-        shayeri: "Main vaade likhne mein mahir nahi,<br>Par nibhaane mein zindagi laga doon.",
-        icon: '🤞',
+        text: "Ready for the main question now?",
+        shayeri: "Mazaak bohot hua, ab sach sun lo,<br>Zindagi bhar ke liye mujhe apna chun lo.",
+        icon: '💍',
         options: [
-            { text: "Actions speak louder 💪", next: 7 },
-            { text: "I trust you 🛡️", next: 7 }
-        ]
-    },
-    {
-        id: 7,
-        text: "You are my necessity.",
-        shayeri: "Tum sirf pasand nahi ho,<br>Tum woh zarurat ho jiske bina dil kaam nahi karta.",
-        icon: '💓',
-        options: [
-            { text: "I'm yours ❤️", next: 8 },
-            { text: "You are my heartbeat �", next: 8 }
-        ]
-    },
-    {
-        id: 8,
-        text: "Just one wish...",
-        shayeri: "Agar zindagi ek safar hai,<br>Toh mujhe har mod par tumhara haath chahiye.",
-        icon: '🤝',
-        options: [
-            { text: "Take my hand 🤝", next: 'proposal' },
-            { text: "Walk with me forever 👣", next: 'proposal' }
+            { text: "I'm ready... 💓", next: 'proposal' },
+            { text: "Go ahead... 🥰", next: 'proposal' }
         ]
     }
 ];
 
 // Elements
 const contentDiv = document.getElementById('content');
+
+// Helper to Create Animated Elements with Staggered Delay
+function createAnimatedElement(tag, className, content, delay) {
+    const el = document.createElement(tag);
+    el.className = className + ' slide-in-up'; // Add animation class
+    el.style.animationDelay = delay + 's'; // Stagger effect
+    el.style.opacity = '0'; // Start hidden
+    if (content) el.innerHTML = content;
+    return el;
+}
 
 // Render function
 function renderStep(stepIndex) {
@@ -110,29 +100,21 @@ function renderStep(stepIndex) {
 
     // Clear content
     contentDiv.innerHTML = '';
-    contentDiv.className = 'fade-in';
 
-    // Icon
-    const iconDiv = document.createElement('div');
-    iconDiv.className = 'heart-icon';
-    iconDiv.innerHTML = `<div class="emoji-icon">${step.icon}</div>`;
+    // 1. Icon (0.1s delay)
+    const iconDiv = createAnimatedElement('div', 'heart-icon', `<div class="emoji-icon">${step.icon}</div>`, 0.1);
     contentDiv.appendChild(iconDiv);
 
-    // Shayari
-    const shayari = document.createElement('div');
-    shayari.className = 'shayari';
-    shayari.innerHTML = `<p>"${step.shayeri}"</p>`;
+    // 2. Shayari (0.3s delay)
+    const shayari = createAnimatedElement('div', 'shayari', `<p>"${step.shayeri}"</p>`, 0.3);
     contentDiv.appendChild(shayari);
 
-    // Text (Context)
-    const title = document.createElement('h1');
-    title.innerText = step.text;
-    title.style.fontSize = "1.5rem";
+    // 3. Text (0.5s delay)
+    const title = createAnimatedElement('h1', '', step.text, 0.5);
     contentDiv.appendChild(title);
 
-    // Options Container - updated to handle multiple options per row or stacked
-    const btnContainer = document.createElement('div');
-    btnContainer.className = 'buttons';
+    // 4. Options Container (0.7s delay)
+    const btnContainer = createAnimatedElement('div', 'buttons', '', 0.7);
 
     step.options.forEach(opt => {
         const btn = document.createElement('button');
@@ -147,40 +129,34 @@ function renderStep(stepIndex) {
 
 function renderProposal() {
     contentDiv.innerHTML = '';
-    contentDiv.className = 'fade-in';
 
-    // Icon (SVG Heart)
-    const iconDiv = document.createElement('div');
-    iconDiv.className = 'heart-icon';
-    iconDiv.innerHTML = `
+    // 1. Icon (SVG Heart) (0.1s)
+    const iconContent = `
         <svg class="heart-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
             fill="#e63946" stroke="none" />
         </svg>
     `;
+    const iconDiv = createAnimatedElement('div', 'heart-icon', iconContent, 0.1);
     contentDiv.appendChild(iconDiv);
 
-    // Final Proposal Text
-    const introText = document.createElement('p');
-    introText.className = "question-text";
-    introText.style.fontSize = "1rem";
-    introText.style.marginBottom = "0.5rem";
-    introText.innerHTML = "Main tumse chand, taare, vaade nahi maangta, bas itna chahta hoon&mdash;<br>Har subah tumhari muskurahat meri pehli dua ho, aur har raat tum meri aakhri soch.";
+    // 2. Intro Text (0.3s)
+    const introText = createAnimatedElement('p', 'question-text',
+        "Main tumse chand, taare, vaade nahi maangta, bas itna chahta hoon&mdash;<br>Har subah tumhari muskurahat meri pehli dua ho, aur har raat tum meri aakhri soch.", 0.3);
     contentDiv.appendChild(introText);
 
-    const title = document.createElement('h1');
-    title.innerHTML = "Will You Be Mine?<br><span style='font-size:1.5rem; display:block; margin-top:10px;'>Hamesha ke liye? ❤️</span>";
+    // 3. Main Title (0.5s)
+    const title = createAnimatedElement('h1', '',
+        "Will You Be Mine?<br><span style='font-size:1.5rem; display:block; margin-top:10px;'>Hamesha ke liye? ❤️</span>", 0.5);
     contentDiv.appendChild(title);
 
-    // Final Soulful Question
-    const shayari = document.createElement('div');
-    shayari.className = 'shayari';
-    shayari.innerHTML = `<p>"Tum meri zindagi ka woh sach banogi,<br>jise main har janam khushi se dohraoon?"</p>`;
+    // 4. Final Question (0.7s)
+    const shayari = createAnimatedElement('div', 'shayari',
+        `<p>"Tum meri zindagi ka woh sach banogi,<br>jise main har janam khushi se dohraoon?"</p>`, 0.7);
     contentDiv.appendChild(shayari);
 
-    // Buttons (Row)
-    const btnContainer = document.createElement('div');
-    btnContainer.className = 'buttons buttons-row';
+    // 5. Buttons (0.9s)
+    const btnContainer = createAnimatedElement('div', 'buttons buttons-row', '', 0.9);
 
     const yesBtn = document.createElement('button');
     yesBtn.className = 'btn btn-primary';
@@ -201,11 +177,35 @@ function renderProposal() {
     contentDiv.appendChild(btnContainer);
 }
 
+// Teasing logic for the runaway button
+// Teasing logic for the runaway button
+const teasingPhrases = [
+    "No?", "Try Again! 😜", "Too slow! 🏃‍♂️", "Ops! 🤷‍♂️", "Missed me! 👻",
+    "Not an option! 🚫", "Really? 🥺", "Catch me! 🏎️", "Nope! 😂",
+    "So rude! 😤", "Dream on! 😴", "Not today! 💅", "Nice try! 😉",
+    "Cannot catch me! 🚄", "Button 404! 🤖", "I am fast! ⚡", "Don't do it! 🙅",
+    "Say YES! 💖", "Error! ❌", "Why? 😭"
+];
+
 function moveButton() {
     const btn = document.getElementById('runawayBtn');
     if (!btn) return;
 
     const card = document.querySelector('.card');
+
+    // FIX: Move button to card directly so it positions relative to the full card
+    if (btn.parentNode !== card) {
+        card.appendChild(btn);
+    }
+
+    // Add teasing text
+    const randomPhrase = teasingPhrases[Math.floor(Math.random() * teasingPhrases.length)];
+    btn.innerText = randomPhrase;
+
+    // Make the move smoother and slower (0.6s)
+    btn.style.transition = "all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1)";
+
+    // Calculate boundaries
     const maxX = card.clientWidth - btn.offsetWidth - 20;
     const maxY = card.clientHeight - btn.offsetHeight - 20;
 
@@ -215,24 +215,28 @@ function moveButton() {
     btn.style.position = 'absolute';
     btn.style.left = `${x}px`;
     btn.style.top = `${y}px`;
+
+    // Random rotation for chaos
+    const rot = Math.random() * 20 - 10;
+    btn.style.transform = `rotate(${rot}deg)`;
+
     btn.style.zIndex = '100';
 }
 
 function showSuccess() {
     contentDiv.innerHTML = '';
 
-    const iconDiv = document.createElement('div');
-    iconDiv.className = 'heart-icon';
-    iconDiv.innerHTML = `<div class="emoji-icon">💍</div>`;
+    // 1. Ring Icon (0.1s)
+    const iconDiv = createAnimatedElement('div', 'heart-icon', `<div class="emoji-icon">💍</div>`, 0.1);
     contentDiv.appendChild(iconDiv);
 
-    const title = document.createElement('h1');
-    title.innerText = "Forever Us ❤️";
+    // 2. Title (0.3s)
+    const title = createAnimatedElement('h1', '', "Forever Us ❤️", 0.3);
     contentDiv.appendChild(title);
 
-    const sub = document.createElement('div');
-    sub.className = 'shayari';
-    sub.innerHTML = `<p>"Mubarak ho tumko yeh zindagani,<br>Ab shuru hoti hai hamari kahani."</p>`;
+    // 3. Final Verse (0.5s)
+    const sub = createAnimatedElement('div', 'shayari',
+        `<p>"Mubarak ho tumko yeh zindagani,<br>Ab shuru hoti hai hamari kahani."</p>`, 0.5);
     contentDiv.appendChild(sub);
 
     launchConfetti();
@@ -241,7 +245,7 @@ function showSuccess() {
 function launchConfetti() {
     var duration = 3 * 1000;
     var animationEnd = Date.now() + duration;
-    var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+    var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 100 };
 
     function random(min, max) {
         return Math.random() * (max - min) + min;
