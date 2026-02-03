@@ -104,15 +104,18 @@ body {
 .card {
     background: var(--card-bg);
     backdrop-filter: blur(20px);
-    border-radius: 24px;
+    border-radius: 20px;
     box-shadow:
         0 20px 50px rgba(0, 0, 0, 0.1),
         0 0 0 1px rgba(255, 255, 255, 0.5) inset;
-    padding: 2.5rem 2rem;
+    padding: 2rem 1.5rem;
+    /* Reduced padding */
     text-align: center;
-    width: 380px;
+    width: 320px;
+    /* Reduced width */
     max-width: 90vw;
-    min-height: 420px;
+    min-height: 380px;
+    /* Reduced min-height */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -122,144 +125,44 @@ body {
     overflow: hidden;
 }
 
-/* Entrance Animations */
-.slide-in-up {
-    animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-@keyframes slideUpFade {
-    0% {
-        opacity: 0;
-        transform: translateY(40px) scale(0.95);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-}
-
-/* Icons */
-.heart-icon {
-    margin-bottom: 0.5rem;
-    height: 70px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.emoji-icon {
-    font-size: 3.5rem;
-    animation: gentleFloater 3s ease-in-out infinite;
-    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.1));
-}
-
-@keyframes gentleFloater {
-
-    0%,
-    100% {
-        transform: translateY(0) rotate(0deg);
-    }
-
-    50% {
-        transform: translateY(-10px) rotate(5deg);
-    }
-}
-
-.heart-svg {
-    width: 70px;
-    height: 70px;
-    filter: drop-shadow(0 4px 8px rgba(230, 57, 70, 0.3));
-    animation: warmBeat 2s ease-in-out infinite;
-}
-
-@keyframes warmBeat {
-    0% {
-        transform: scale(1);
-        filter: drop-shadow(0 4px 8px rgba(230, 57, 70, 0.3));
-    }
-
-    50% {
-        transform: scale(1.1);
-        filter: drop-shadow(0 8px 16px rgba(230, 57, 70, 0.5));
-    }
-
-    100% {
-        transform: scale(1);
-        filter: drop-shadow(0 4px 8px rgba(230, 57, 70, 0.3));
-    }
-}
-
-/* Typography */
+/* Typography Updates */
 h1 {
     font-family: var(--font-heading);
     color: #e63946;
-    font-size: 2.2rem;
+    font-size: 1.8rem;
+    /* Reduced font size */
     margin-bottom: 0.5rem;
     font-weight: 700;
     letter-spacing: -0.5px;
 }
 
 p.question-text {
-    font-size: 1.1rem;
+    font-size: 0.95rem;
+    /* Reduced font size */
     color: #457b9d;
-    margin-bottom: 1.5rem;
-    line-height: 1.5;
+    margin-bottom: 1.2rem;
+    line-height: 1.4;
 }
 
-/* Shayari Box - Elegant Design */
+/* Shayari Box */
 .shayari {
-    background: linear-gradient(135deg, #fff0f3, #fff);
-    padding: 1.2rem;
-    margin-bottom: 1.5rem;
-    border-radius: 12px;
-    border-left: 4px solid #e63946;
+    padding: 1rem;
+    margin-bottom: 1.2rem;
     width: 100%;
-    margin-top: 0.5rem;
-    box-shadow: 0 4px 12px rgba(230, 57, 70, 0.05);
-    position: relative;
-}
-
-.shayari::before {
-    content: "❝";
-    position: absolute;
-    top: -10px;
-    left: 10px;
-    font-size: 2rem;
-    color: #e63946;
-    opacity: 0.2;
 }
 
 .shayari p {
-    font-family: var(--font-shayari);
-    font-style: italic;
-    color: #1d3557;
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 0;
+    font-size: 0.9rem;
+    /* Reduced font size */
+    line-height: 1.5;
 }
 
 /* Buttons */
-.buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
-    width: 100%;
-    margin-top: 1rem;
-}
-
 .btn {
-    padding: 14px 20px;
-    font-size: 1.05rem;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    font-family: var(--font-body);
-    font-weight: 600;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    width: 100%;
-    position: relative;
-    overflow: hidden;
+    padding: 10px 18px;
+    /* Reduced padding */
+    font-size: 0.95rem;
+    /* Reduced font size */
 }
 
 /* Shimmer Effect on Primary Buttons */
