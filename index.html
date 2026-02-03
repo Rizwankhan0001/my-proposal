@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For You ❤️</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Outfit:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+
+<body>
+    <div class="floating-hearts">
+        <span style="--i:11;">❤️</span>
+        <span style="--i:12;">💖</span>
+        <span style="--i:24;">💗</span>
+        <span style="--i:10;">❤️</span>
+        <span style="--i:14;">💖</span>
+        <span style="--i:23;">💗</span>
+        <span style="--i:18;">❤️</span>
+        <span style="--i:16;">💖</span>
+        <span style="--i:19;">💗</span>
+    </div>
+
+    <!-- Main Game Container -->
+    <div class="container">
+        <div class="card" id="gameCard">
+            <!-- Dynamic Content will be injected here by JS -->
+            <div id="content" class="fade-in">
+                <!-- Initial Loading Content -->
+                <div class="heart-icon">
+                    <div class="emoji-icon">👋</div>
+                </div>
+                <h1>Loading...</h1>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+HOW TO SHARE YOUR PROPOSAL WEBSITE ❤️
+
+Since this website currently lives on your computer, you need to put it on the internet to send a link. 
+Here is the easiest free way to do it (takes 1 minute):
+
+METHOD 1: Netlify Drop (Recommended)
+1. Open this website in your browser: https://app.netlify.com/drop
+2. Open your File Explorer to where this folder is (`c:\Users\rizwa\Desktop\Sample`).
+3. Drag and drop the ENTIRE 'Sample' folder onto the box on the Netlify webpage.
+4. It will upload and turn green.
+5. It will give you a link (like `random-name.netlify.app`).
+6. Click the link to test it.
+7. Send that link to your love! 
+
+METHOD 2: Tiiny.host
+1. Select all 3 files (index.html, style.css, script.js).
+2. Right-click and choose "Compress to ZIP file" (or Send to > Compressed folder).
+3. Go to https://tiiny.host/
+4. Upload that ZIP file.
+5. It will give you a temporary link to share.
+
+Good luck! 🤞
