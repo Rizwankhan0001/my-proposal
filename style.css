@@ -149,12 +149,20 @@ p.question-text {
     padding: 1rem;
     margin-bottom: 1.2rem;
     width: 100%;
+    /* Ensure background is visible if gradient was missing */
+    background: linear-gradient(135deg, #fff0f3, #fff);
+    border-radius: 12px;
+    border-left: 4px solid #e63946;
 }
 
 .shayari p {
-    font-size: 0.9rem;
-    /* Reduced font size */
+    font-size: 0.95rem;
+    /* Slightly larger for readability */
     line-height: 1.5;
+    color: #1d3557;
+    /* Ensure dark text */
+    font-weight: 500;
+    /* Enhance weight */
 }
 
 /* Buttons */
