@@ -92,9 +92,9 @@ const contentDiv = document.getElementById('content');
 // Helper to Create Animated Elements with Staggered Delay
 function createAnimatedElement(tag, className, content, delay) {
     const el = document.createElement(tag);
-    el.className = className + ' slide-in-up'; // Add animation class
-    el.style.animationDelay = delay + 's'; // Stagger effect
-    el.style.opacity = '0'; // Start hidden
+    el.className = className + ' slide-in-up';
+    el.style.animationDelay = delay + 's';
+    // Removed explicit opacity: 0 to fallback to CSS visibility
     if (content) el.innerHTML = content;
     return el;
 }
@@ -115,20 +115,20 @@ function renderStep(stepIndex) {
     // Clear content
     contentDiv.innerHTML = '';
 
-    // 1. Icon (0.1s delay)
-    const iconDiv = createAnimatedElement('div', 'heart-icon', `<div class="emoji-icon">${step.icon}</div>`, 0.1);
+    // 1. Icon (Immediate)
+    const iconDiv = createAnimatedElement('div', 'heart-icon', `<div class="emoji-icon">${step.icon}</div>`, 0.0);
     contentDiv.appendChild(iconDiv);
 
-    // 2. Shayari (0.3s delay)
-    const shayari = createAnimatedElement('div', 'shayari', `<p>"${step.shayeri}"</p>`, 0.3);
+    // 2. Shayari (0.1s delay)
+    const shayari = createAnimatedElement('div', 'shayari', `<p>"${step.shayeri}"</p>`, 0.1);
     contentDiv.appendChild(shayari);
 
-    // 3. Text (0.5s delay)
-    const title = createAnimatedElement('h1', '', step.text, 0.5);
+    // 3. Text (0.2s delay)
+    const title = createAnimatedElement('h1', '', step.text, 0.2);
     contentDiv.appendChild(title);
 
-    // 4. Options Container (0.7s delay)
-    const btnContainer = createAnimatedElement('div', 'buttons', '', 0.7);
+    // 4. Options Container (0.3s delay)
+    const btnContainer = createAnimatedElement('div', 'buttons', '', 0.3);
 
     step.options.forEach(opt => {
         const btn = document.createElement('button');
@@ -144,33 +144,33 @@ function renderStep(stepIndex) {
 function renderProposal() {
     contentDiv.innerHTML = '';
 
-    // 1. Icon (SVG Heart) (0.1s)
+    // 1. Icon (SVG Heart) (0.0s)
     const iconContent = `
         <svg class="heart-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
             fill="#e63946" stroke="none" />
         </svg>
     `;
-    const iconDiv = createAnimatedElement('div', 'heart-icon', iconContent, 0.1);
+    const iconDiv = createAnimatedElement('div', 'heart-icon', iconContent, 0.0);
     contentDiv.appendChild(iconDiv);
 
-    // 2. Intro Text (0.3s)
+    // 2. Intro Text (0.1s)
     const introText = createAnimatedElement('p', 'question-text',
-        "Main tumse chand, taare, vaade nahi maangta, bas itna chahta hoon&mdash;<br>Har subah tumhari muskurahat meri pehli dua ho, aur har raat tum meri aakhri soch.", 0.3);
+        "Main tumse chand, taare, vaade nahi maangta, bas itna chahta hoon&mdash;<br>Har subah tumhari muskurahat meri pehli dua ho, aur har raat tum meri aakhri soch.", 0.1);
     contentDiv.appendChild(introText);
 
-    // 3. Main Title (0.5s)
+    // 3. Main Title (0.2s)
     const title = createAnimatedElement('h1', '',
-        "Will You Be Mine?<br><span style='font-size:1.5rem; display:block; margin-top:10px;'>Hamesha ke liye? ❤️</span>", 0.5);
+        "Will You Be Mine?<br><span style='font-size:1.5rem; display:block; margin-top:10px;'>Hamesha ke liye? ❤️</span>", 0.2);
     contentDiv.appendChild(title);
 
-    // 4. Final Question (0.7s)
+    // 4. Final Question (0.3s)
     const shayari = createAnimatedElement('div', 'shayari',
-        `<p>"Tum meri zindagi ka woh sach banogi,<br>jise main har janam khushi se dohraoon?"</p>`, 0.7);
+        `<p>"Tum meri zindagi ka woh sach banogi,<br>jise main har janam khushi se dohraoon?"</p>`, 0.3);
     contentDiv.appendChild(shayari);
 
-    // 5. Buttons (0.9s)
-    const btnContainer = createAnimatedElement('div', 'buttons buttons-row', '', 0.9);
+    // 5. Buttons (0.4s)
+    const btnContainer = createAnimatedElement('div', 'buttons buttons-row', '', 0.4);
 
     const yesBtn = document.createElement('button');
     yesBtn.className = 'btn btn-primary';
@@ -191,7 +191,6 @@ function renderProposal() {
     contentDiv.appendChild(btnContainer);
 }
 
-// Teasing logic for the runaway button
 // Teasing logic for the runaway button
 const teasingPhrases = [
     "No?", "Try Again! 😜", "Too slow! 🏃‍♂️", "Ops! 🤷‍♂️", "Missed me! 👻",
