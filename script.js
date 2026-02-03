@@ -2,85 +2,85 @@
 const steps = [
     {
         id: 'start',
-        text: "I have a serious confession...",
-        shayeri: "Kuch baatein chupaayi nahi jaati,<br>Aur ab mujhse yeh baat dabaayi nahi jaati.",
-        icon: '🤐',
+        text: "Hey... I have a huge secret.",
+        shayeri: "Kuch baatein chupaayi nahi jaati,<br>Ab mujhse yeh baat aur dabaayi nahi jaati.",
+        icon: '🤫',
         options: [
-            { text: "What happened? 😨", next: 1 },
-            { text: "Did you break something? 🤨", next: 1 },
-            { text: "Spill the tea! ☕", next: 1 },
-            { text: "Im listening... 👂", next: 1 }
+            { text: "What did you do now? 🤨", next: 1 },
+            { text: "Tell me!! 😤", next: 1 },
+            { text: "Is it bad? 😨", next: 1 },
+            { text: "Spill the tea! ☕", next: 1 }
         ]
     },
     {
         id: 1,
-        text: "I think I'm falling for someone...",
+        text: "I think I'm starting to like someone else...",
         shayeri: "Dil par ab mera zor nahi chalta,<br>Koi hai jo ise apne hisaab se chalata hai.",
         icon: '💘',
         options: [
-            { text: "Who is she? 🤨", next: 2 },
-            { text: "Is she pretty? 😒", next: 2 },
-            { text: "Do I know her? 🤔", next: 2 },
-            { text: "Show me! 😤", next: 2 }
+            { text: "EXCUSE ME? 😡", next: 2 },
+            { text: "Who the hell is she? 🔪", next: 2 },
+            { text: "Are you joking? 🙄", next: 2 },
+            { text: "I will kill you. 🙂", next: 2 }
         ]
     },
     {
         id: 2,
-        text: "She is extremely beautiful... prettier than you! 🫣",
+        text: "She's kinda obsessed with me. And she has the cutest smile. 🥰",
         shayeri: "Uski aankhon mein ek alag sa jaadu hai,<br>Jo mujhe har waqt deewana banata hai.",
         icon: '😍',
         options: [
-            { text: "Excuse me?! 😤", next: 3 },
-            { text: "I doubt that! 💅", next: 3 },
-            { text: "Whatever. 🙄", next: 3 },
-            { text: "So rude! 👊", next: 3 }
+            { text: "WOW. Just wow. 👏", next: 3 },
+            { text: "Is she prettier than me? 💅", next: 3 },
+            { text: "Stop talking about her! 😤", next: 3 },
+            { text: "Whatever, bye. 🏃‍♀️", next: 3 }
         ]
     },
     {
         id: 3,
-        text: "And she is a bit annoying too... 🤏",
-        shayeri: "Thodi ziddi hai, thodi nadaan hai,<br>Par sach kahoon toh wahi meri jaan hai.",
+        text: "But she has one big flaw... She gets angry very easily! 🤭",
+        shayeri: "Thodi ziddi hai, thodi gussail hai,<br>Par sach kahoon toh wahi meri jaan hai.",
         icon: '🤪',
         options: [
-            { text: "Okay, stop it! ✋", next: 4 },
-            { text: "Who is this girl?! 😡", next: 4 },
-            { text: "Im leaving! 🏃‍♀️", next: 4 },
-            { text: "Tell me NOW! 🔫", next: 4 }
+            { text: "I wonder why! 🙄", next: 4 },
+            { text: "I don't care! 😒", next: 4 },
+            { text: "She sounds annoying. 💅", next: 4 },
+            { text: "Show me her face. NOW. 📸", next: 4 }
         ]
     },
     {
         id: 4,
-        text: "Do you want to see her?",
-        shayeri: "Woh abhi yahan mere saath maujood hai,<br>Aur iss waqt yeh message padh rahi hai.",
+        text: "She is actually reading this message right now...",
+        shayeri: "Woh abhi yahan mere saath maujood hai,<br>Aur gusse mein bohot cute lag rahi hai.",
         icon: '🫣',
         options: [
             { text: "Wait... what? 😳", next: 5 },
-            { text: "Is it me? 🙈", next: 5 },
-            { text: "Check your mirror? 🪞", next: 5 },
-            { text: "No way... 😱", next: 5 }
+            { text: "Is it... ME? 🙈", next: 5 },
+            { text: "Don't mess with me! 😤", next: 5 },
+            { text: "Oh really? 🤨", next: 5 }
         ]
     },
     {
         id: 5,
-        text: "Yes, it's YOU! My Dumbo! ❤️",
-        shayeri: "Duniya mein laakhon chehre honge,<br>Par mere dil ko sirf tumhara chehra pasand hai.",
-        icon: '🫵',
+        text: "YES! It's YOU, my angry bird! ❤️😂",
+        shayeri: "Duniya mein laakhon chehre honge,<br>Par mujhe sirf tumhara gussa aur pyaar chahiye.",
+        icon: '🌹',
         options: [
-            { text: "I knew it! 😂", next: 6 },
-            { text: "You scared me! 👊", next: 6 },
-            { text: "I hate you! 😤❤️", next: 6 },
-            { text: "Awww! 🥰", next: 6 }
+            { text: "You are SO dead! 😂❤️", next: 6 },
+            { text: "I hate you! (Love you) 🙈", next: 6 },
+            { text: "You scared me idiot! 👊", next: 6 },
+            { text: "Okay, that was smooth. 😎", next: 6 }
         ]
     },
     {
         id: 6,
-        text: "Ready for the main question now?",
+        text: "Okay, okay! Sorry! 😂 Now answer this seriously...",
         shayeri: "Mazaak bohot hua, ab sach sun lo,<br>Zindagi bhar ke liye mujhe apna chun lo.",
         icon: '💍',
         options: [
-            { text: "I'm ready... 💓", next: 'proposal' },
-            { text: "Go ahead... 🥰", next: 'proposal' },
-            { text: "Ask me! 🎤", next: 'proposal' },
+            { text: "Okay, ask me... 💓", next: 'proposal' },
+            { text: "I'm listening... 🥰", next: 'proposal' },
+            { text: "Make it good! 🎤", next: 'proposal' },
             { text: "Finally! 🙄", next: 'proposal' }
         ]
     }
