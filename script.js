@@ -7,7 +7,9 @@ const steps = [
         icon: '🤐',
         options: [
             { text: "What happened? 😨", next: 1 },
-            { text: "Tell me now! 😠", next: 1 }
+            { text: "Did you break something? 🤨", next: 1 },
+            { text: "Spill the tea! ☕", next: 1 },
+            { text: "Im listening... 👂", next: 1 }
         ]
     },
     {
@@ -17,7 +19,9 @@ const steps = [
         icon: '💘',
         options: [
             { text: "Who is she? 🤨", next: 2 },
-            { text: "Oh really? 😒", next: 2 }
+            { text: "Is she pretty? 😒", next: 2 },
+            { text: "Do I know her? 🤔", next: 2 },
+            { text: "Show me! 😤", next: 2 }
         ]
     },
     {
@@ -27,7 +31,9 @@ const steps = [
         icon: '😍',
         options: [
             { text: "Excuse me?! 😤", next: 3 },
-            { text: "Whatever. 🙄", next: 3 }
+            { text: "I doubt that! 💅", next: 3 },
+            { text: "Whatever. 🙄", next: 3 },
+            { text: "So rude! 👊", next: 3 }
         ]
     },
     {
@@ -37,7 +43,9 @@ const steps = [
         icon: '🤪',
         options: [
             { text: "Okay, stop it! ✋", next: 4 },
-            { text: "Who is this girl?! 😡", next: 4 }
+            { text: "Who is this girl?! 😡", next: 4 },
+            { text: "Im leaving! 🏃‍♀️", next: 4 },
+            { text: "Tell me NOW! 🔫", next: 4 }
         ]
     },
     {
@@ -47,7 +55,9 @@ const steps = [
         icon: '🫣',
         options: [
             { text: "Wait... what? 😳", next: 5 },
-            { text: "Is it me? 🙈", next: 5 }
+            { text: "Is it me? 🙈", next: 5 },
+            { text: "Check your mirror? 🪞", next: 5 },
+            { text: "No way... 😱", next: 5 }
         ]
     },
     {
@@ -57,7 +67,9 @@ const steps = [
         icon: '🫵',
         options: [
             { text: "I knew it! 😂", next: 6 },
-            { text: "You scared me! 👊", next: 6 }
+            { text: "You scared me! 👊", next: 6 },
+            { text: "I hate you! 😤❤️", next: 6 },
+            { text: "Awww! 🥰", next: 6 }
         ]
     },
     {
@@ -67,7 +79,9 @@ const steps = [
         icon: '💍',
         options: [
             { text: "I'm ready... 💓", next: 'proposal' },
-            { text: "Go ahead... 🥰", next: 'proposal' }
+            { text: "Go ahead... 🥰", next: 'proposal' },
+            { text: "Ask me! 🎤", next: 'proposal' },
+            { text: "Finally! 🙄", next: 'proposal' }
         ]
     }
 ];
